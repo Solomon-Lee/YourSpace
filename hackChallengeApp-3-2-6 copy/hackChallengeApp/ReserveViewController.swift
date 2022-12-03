@@ -26,7 +26,7 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
     let roomMenuText = UILabel()
     let roomMenuPic = UIImageView()
     var rooms = [Spacess]()
-    var books = [Spacess]()
+//    var roomsCopy = [Spacess]()
     var roomCollectionView: UICollectionView!
 //    var bookCollectionView: UICollectionView!
     let roomReuseIdentifier: String = "roomReuseIdentifier"
@@ -44,9 +44,6 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
         
         
 //        title = "List"
@@ -136,6 +133,7 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
         DropDown.appearance().backgroundColor = .white
         roomMenu.selectionAction = { [unowned self] (index: Int, item: String) in
             self.roomMenuText.text = item
+//            filter()
 //          print("Selected item: \(item) at index: \(index)")
         }
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapMenu))
@@ -247,7 +245,6 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
         ])
         
         //setting up the room collection view
-        
         NSLayoutConstraint.activate([
         
             roomCollectionView.topAnchor.constraint(equalTo: roomMenuView.bottomAnchor,constant: 20),
@@ -274,6 +271,17 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
     }
 
     
+//    func filter(){
+//
+//        roomsCopy = []
+//
+//        if roomMenu.selectedItem == "Classrooms"{
+//            rooms = rooms + roomsCopy.filter({ space in
+//                space.id == 0
+//            })
+//        }
+//    }
+    
     func getSpaces(){
         NetworkManager.getAllBookings { spaces in
             self.rooms = spaces
@@ -282,8 +290,7 @@ class ReserveViewController: UIViewController, UIViewControllerTransitioningDele
             }
         }
     }
-
-
+    
     
 
 }
@@ -332,3 +339,5 @@ extension ReserveViewController: changeDropdownIndexDelegate{
     
     
 }
+
+

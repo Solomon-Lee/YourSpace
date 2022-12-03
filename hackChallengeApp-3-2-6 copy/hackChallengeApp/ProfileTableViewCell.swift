@@ -103,7 +103,7 @@ class ProfileTableViewCell: UITableViewCell {
         
     }
     
-    func profileConfigure(profile: Spacess) {
+    func profileConfigure(profile: bookingDetails) {
         libraryNameLabel.text = profile.name
         fullNameLabel.text = profile.location
         capacityLabel.text = "Capacity: \(profile.capacity)"
