@@ -28,12 +28,12 @@
 		315F6694293548A2002B282A /* RegisterGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F6693293548A2002B282A /* RegisterGradientView.swift */; };
 		315F669629355157002B282A /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F669529355157002B282A /* PaddedTextField.swift */; };
 		315F6698293554B6002B282A /* LoginScreenPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315F6697293554B6002B282A /* LoginScreenPaddedTextField.swift */; };
+		319E3B70293B050D00B111E0 /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319E3B6F293B050D00B111E0 /* GetUser.swift */; };
 		874275D1292F1AF7008CFA45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874275D0292F1AF7008CFA45 /* AppDelegate.swift */; };
 		874275D3292F1AF7008CFA45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874275D2292F1AF7008CFA45 /* SceneDelegate.swift */; };
 		874275D5292F1AF7008CFA45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874275D4292F1AF7008CFA45 /* ViewController.swift */; };
 		874275DA292F1AF9008CFA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 874275D9292F1AF9008CFA45 /* Assets.xcassets */; };
 		874275DD292F1AF9008CFA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874275DB292F1AF9008CFA45 /* LaunchScreen.storyboard */; };
-		87619F002939B5ED0031A8C5 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87619EFF2939B5ED0031A8C5 /* ProfileCollectionViewCell.swift */; };
 		87BDDE1A2933107600F8A380 /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BDDE192933107600F8A380 /* PushViewController.swift */; };
 		D3D5FDAB6A2F5597E9309A34 /* Pods_hackChallengeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 909186FBEB9556F664E8ED90 /* Pods_hackChallengeApp.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +61,7 @@
 		315F6693293548A2002B282A /* RegisterGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGradientView.swift; sourceTree = "<group>"; };
 		315F669529355157002B282A /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		315F6697293554B6002B282A /* LoginScreenPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenPaddedTextField.swift; sourceTree = "<group>"; };
+		319E3B6F293B050D00B111E0 /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		874275CD292F1AF7008CFA45 /* hackChallengeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackChallengeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		874275D0292F1AF7008CFA45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		874275D2292F1AF7008CFA45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		874275D9292F1AF9008CFA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		874275DC292F1AF9008CFA45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		874275DE292F1AF9008CFA45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		87619EFF2939B5ED0031A8C5 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		87BDDE192933107600F8A380 /* PushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 		909186FBEB9556F664E8ED90 /* Pods_hackChallengeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackChallengeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2B78FC6B71EFD5D3176D1A /* Pods-hackChallengeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackChallengeApp.debug.xcconfig"; path = "Target Support Files/Pods-hackChallengeApp/Pods-hackChallengeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,13 +127,13 @@
 				315F668F2934819E002B282A /* ProfileViewController.swift */,
 				310B6035293AF49F009CBF9C /* ProfileTableViewCell.swift */,
 				31240463293A4E0000FED6F3 /* ProfileGradientView.swift */,
-				87619EFF2939B5ED0031A8C5 /* ProfileCollectionViewCell.swift */,
 				87BDDE192933107600F8A380 /* PushViewController.swift */,
 				315F6697293554B6002B282A /* LoginScreenPaddedTextField.swift */,
 				315F669529355157002B282A /* PaddedTextField.swift */,
 				3113E327293AB0FF00611144 /* AddUserBooking.swift */,
 				874275D9292F1AF9008CFA45 /* Assets.xcassets */,
 				31490E50293802B200E6BB2E /* NetworkManager.swift */,
+				319E3B6F293B050D00B111E0 /* GetUser.swift */,
 				874275DB292F1AF9008CFA45 /* LaunchScreen.storyboard */,
 				874275DE292F1AF9008CFA45 /* Info.plist */,
 			);
@@ -289,13 +289,13 @@
 				315F66902934819E002B282A /* ProfileViewController.swift in Sources */,
 				31490E57293845E300E6BB2E /* RoomCollectionViewButtonCell.swift in Sources */,
 				87BDDE1A2933107600F8A380 /* PushViewController.swift in Sources */,
-				87619F002939B5ED0031A8C5 /* ProfileCollectionViewCell.swift in Sources */,
 				3113E326293AABB300611144 /* BookingInfo.swift in Sources */,
 				315F66882934811D002B282A /* GradientView.swift in Sources */,
 				874275D3292F1AF7008CFA45 /* SceneDelegate.swift in Sources */,
 				315F6686293480EA002B282A /* HomeViewController.swift in Sources */,
 				31490E55293834BD00E6BB2E /* BookingPresentViewController.swift in Sources */,
 				310B6036293AF49F009CBF9C /* ProfileTableViewCell.swift in Sources */,
+				319E3B70293B050D00B111E0 /* GetUser.swift in Sources */,
 				315F6694293548A2002B282A /* RegisterGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

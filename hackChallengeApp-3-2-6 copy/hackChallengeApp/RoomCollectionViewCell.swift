@@ -127,7 +127,7 @@ class RoomCollectionViewCell: UICollectionViewCell {
 
         let uiConfiguration = PresentationUIConfiguration(cornerRadius: 35,
                                                           isTapBackgroundToDismissEnabled: true)
-        let viewController = BookingPresentViewController()
+        let viewController = BookingPresentViewController(delegate: ProfileViewController())
         let alignment = PresentationAlignment(vertical: .bottom, horizontal: .left)
         let size = PresentationSize(width: .fullscreen,height: .custom(value: (parent?.view.bounds.height)!/(2.7)))
         let timing = PresentationTiming(duration: .slow, presentationCurve: .easeInOut, dismissCurve: .linear)

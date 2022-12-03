@@ -29,6 +29,16 @@ class BookingPresentViewController: UIViewController {
     let dateConfirmationDesc = UILabel()
     let dateConfirmationImage = UIImageView()
     
+    var delegate: profileTokenDelegate?
+    
+    init(delegate: profileTokenDelegate){
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
@@ -144,7 +154,7 @@ class BookingPresentViewController: UIViewController {
     }
     
      func addBooking(){
-         print("ASDFASDF: Bearer \(BookingPresentViewController.tokenPlaceholder!)")
+//         print("ASDFASDF: Bearer \(BookingPresentViewController.tokenPlaceholder!)")
 
 //         NetworkManager.AddaUserToaBookingById(id: Int(idPlaceholder.text!) ?? 0, Authorization: "Bearer \(BookingPresentViewController.tokenPlaceholder!)") { response in
 //
@@ -154,9 +164,11 @@ class BookingPresentViewController: UIViewController {
 //
 //        }
          NetworkManager.AddaUserToaBookingById(id: Int(idPlaceholder.text!) ?? 0, token: BookingPresentViewController.tokenPlaceholder!) { response in
-             print(BookingPresentViewController.tokenPlaceholder!)
-             print(response)
+//             print(BookingPresentViewController.tokenPlaceholder!)
+//             print(response)
          }
+         self.delegate?.changeProfileToken(token: BookingPresentViewController.tokenPlaceholder!)
+
 
         
        
@@ -349,12 +361,16 @@ class BookingPresentViewController: UIViewController {
 extension BookingPresentViewController: passTokenDelegate{
      func changeToken(token: String) {
         BookingPresentViewController.tokenPlaceholder = token
-        print(BookingPresentViewController.tokenPlaceholder)
-        print(token)
+        print(BookingPresentViewController.tokenPlaceholder!)
+//        print(token)
 
     }
     
     
+}
+
+protocol profileTokenDelegate: UIViewController{
+    func changeProfileToken(token: String)
 }
 
 

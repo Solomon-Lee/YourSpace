@@ -263,6 +263,8 @@ class ViewController: UIViewController{
                         tabBarItems.modalPresentationStyle = .fullScreen
                         tabBarItems.modalTransitionStyle = .flipHorizontal
                         //        tabBarItems.modalTransitionStyle = .partialCurl
+                        tabBarItems.selectedIndex = 1
+                        tabBarItems.selectedIndex = 0
                         present(tabBarItems,animated: true)
                     }
                 }

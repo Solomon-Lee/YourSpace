@@ -74,31 +74,52 @@ class NetworkManager{
         }
     }
     
-    
-    static func getBookingsofaUser(token: String, completion: @escaping([bookings]) -> Void){
-        
+    static func getBookingsofaUser(token: String, completion: @escaping([bookingDetails]) -> Void){
         let headers: HTTPHeaders = [
             .authorization(bearerToken: token)
         ]
         
-        AF.request("http://35.245.236.156/api/users/bookings/",method: .get,headers: headers).validate().responseData { response in
+        AF.request("http://35.245.236.156/api/users/bookings/", method: .get, headers: headers).validate().responseData { response in
             switch response.result{
             case .success(let data):
                 let jsonDecoder = JSONDecoder()
-                if let BookingInfo = try? jsonDecoder.decode(BookingResponse.self, from: data){
-                    let bookings = BookingInfo.bookings
+                if let bookingInfo = try? jsonDecoder.decode(getBookingbyIdResponse.self, from: data){
+                    let bookings = bookingInfo.bookings
                     completion(bookings)
                 }
                 else{
                     print("Failed to decode")
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-        
     }
+    
+//    static func getBookingsofaUser(token: String, completion: @escaping([bookingsInfo]) -> Void){
+//        
+//        let headers: HTTPHeaders = [
+//            .authorization(bearerToken: token)
+//        ]
+//
+//        AF.request("http://35.245.236.156/api/users/bookings/",method: .get,headers: headers).validate().responseData { response in
+//            switch response.result{
+//            case .success(let data):
+//                let jsonDecoder = JSONDecoder()
+//                if let BookingInfo = try? jsonDecoder.decode(UseraddingBookingResponse.self, from: data){
+//                    let bookings = BookingInfo.bookings
+//                    completion(bookings)
+//                }
+//                else{
+//                    print("Failed to decode getbookingsOfaUser")
+//                }
+//
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//
+//    }
     
 
     
@@ -113,7 +134,7 @@ class NetworkManager{
         ]
         
         
-        print("\(endpoint)\(idd)/add/")
+//        print("\(endpoint)\(idd)/add/")
         AF.request("\(endpoint)\(id)/add/",method: .post, headers: headers ).validate().responseData { response in
             switch response.result{
             case .success(let data):

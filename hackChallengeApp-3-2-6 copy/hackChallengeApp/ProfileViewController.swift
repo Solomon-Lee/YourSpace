@@ -8,6 +8,8 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    var tokenabc: String?
     let titleLabel = UILabel()
     let profileImage = UIImageView()
     let gradientColorView = ProfileGradientView(frame: CGRect(x: 0, y: 0, width: 400, height: 292))
@@ -17,7 +19,7 @@ class ProfileViewController: UIViewController {
     let spacesLabel = UILabel()
     var profileTableView = UITableView()
     let profileReuseIdentifier: String = "profileReuseIdentifier"
-    var bookings = [Spacess]()
+    var bookings = [bookingDetails]()
     let background = UIImageView()
 
     
@@ -86,7 +88,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(profileTableView)
         
         setupConstraints()
-        getSpaces()
+//        getSpaces()
                 
     }
     
@@ -153,14 +155,11 @@ class ProfileViewController: UIViewController {
         
     }
     
-    func getSpaces(){
-        NetworkManager.getAllBookings { bookings in
-            self.bookings = bookings
-            DispatchQueue.main.async{
-                self.profileTableView.reloadData()
-            }
-        }
-    }
+//    func getSpaces(){
+//        NetworkManager.getBookingsofaUser(token: tokenabc) { response in
+//            self.bookings = response
+//        }
+//    }
 }
 
 extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
@@ -192,6 +191,15 @@ extension ProfileViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
+    
+}
+
+extension ProfileViewController: profileTokenDelegate{
+    func changeProfileToken(token: String) {
+        tokenabc = token
+        print(tokenabc!)
+    }
+    
     
 }
 
